@@ -20,6 +20,7 @@ class DateTimeIdGeneratorTest {
 		IdGenerator<String> dateTimeIdGenerator = new DateTimeIdGenerator();
 		String id = dateTimeIdGenerator.getId();
 		log.info(id);
+		
 		int length = id.length(); //usual length of ids
 		int currentLength = length;
 		long millis = System.currentTimeMillis();
@@ -30,21 +31,20 @@ class DateTimeIdGeneratorTest {
 			assertNotEquals(newId, id);
 			int newLength = newId.length();
 			
-			if(newLength > length) { //counter appended
-				if (currentLength == length) {
-					//same second as last id, reset counter
+			if (newLength > length) { //counter appended
+				if (currentLength == length) { //same second as last id, reset counter
 					assertEquals(LocalDateTime.parse(newId.substring(0, length)), LocalDateTime.parse(id));
 					assertEquals(newId.substring(length), "-1");
 					log.info(newId);
-				} else {
-					//same second as last id, increment counter
+				} else { //same second as last id, increment counter
 					assertEquals(Integer.valueOf(newId.substring(length + 1)), Integer.valueOf(id.substring(length + 1)) + 1);
 				}
 			}
-			//one second more than last id
-			if(newLength == length) {
+			
+			if (newLength == length) { //one second more than last id
 				assertEquals(LocalDateTime.parse(newId), LocalDateTime.parse(id.substring(0, length)).plusSeconds(1));
 			}
+			
 			currentLength = newLength;
 			id = newId;
 		}

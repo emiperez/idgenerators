@@ -31,12 +31,10 @@ class UuidIdGeneratorTest {
 	void testGetId() {
 		IdGenerator<UUID> idGenerator = new UuidIdGenerator();
 		UUID id = idGenerator.getId();
-		
-		//this checks that a correct UUID has been generated
-		assertEquals(id, UUID.fromString(id.toString()));
-		
-		//this checks that the same id has not been generated twice
-		assertNotEquals(id, idGenerator.getId());
+
+		assertEquals(id, UUID.fromString(id.toString())); // this checks that a correct UUID has been generated
+
+		assertNotEquals(id, idGenerator.getId()); // this checks that the same id has not been generated twice
 	}
 
 }
