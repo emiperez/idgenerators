@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>
- * This {@linkplain IdGenerator} returns a String build by the Date and Time
+ * This {@linkplain IdGenerator} returns a String built by the Date and Time
  * and, if there already was another id at the same time, a sequential number
  * appended.
  * 

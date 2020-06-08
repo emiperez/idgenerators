@@ -18,7 +18,7 @@ package com.emiperez.commons.idgenerators;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p> A thread safe {@linkplain IdGenerator} based on {@linkplain AtomicInteger}
+ * <p> A thread safe {@linkplain IdGenerator} based on {@linkplain AtomicInteger}.
  * 
  * <p> This IdGenerator does not persist its value so it will begin with 1
  * every time an application starts.
