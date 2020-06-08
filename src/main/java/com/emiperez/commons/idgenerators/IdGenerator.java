@@ -16,10 +16,7 @@
 package com.emiperez.commons.idgenerators;
 
 /**
- * 
- * @author emiperez
- *
- * @param <T> Type of the id to be returned by getId()
+ * @param <T> Type of the id to be returned by getId().
  */
 public interface IdGenerator<T> {
 

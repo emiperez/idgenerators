@@ -18,8 +18,7 @@ package com.emiperez.commons.idgenerators;
 import java.util.UUID;
 
 /**
- * An {@linkplain IdGenerator} based on {@linkplain UUID#randomUUID()}
- *
+ * An {@linkplain IdGenerator} based on {@linkplain UUID#randomUUID()}. *
  */
 public class UuidIdGenerator implements IdGenerator<UUID> {
 	

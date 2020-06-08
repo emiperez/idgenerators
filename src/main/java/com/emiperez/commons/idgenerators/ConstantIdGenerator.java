@@ -17,8 +17,7 @@ package com.emiperez.commons.idgenerators;
 
 /**
  *  This {@linkplain IdGenerator} always returns the same id, which is defined on the 
- * constructor
- * 
+ * constructor. 
  */
 public class ConstantIdGenerator<T> implements IdGenerator<T>{
 
