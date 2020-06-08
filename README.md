@@ -1,7 +1,7 @@
 # idgenerators
-Id generators for java
+Id Generators for Java.
 
-Some classes that implement the interface IdGenerator<T> where T is the type returned by its only method getId()
+Some classes that implement the interface IdGenerator<T> where T is the type returned by its only method getId():
 
 Class | Description
 ------------ | -------------
