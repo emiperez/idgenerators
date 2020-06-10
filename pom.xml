@@ -13,29 +13,32 @@
 			<name>Emilio Perez</name>
 			<url>https://emiperez.com</url>
 		</developer>
-	</developers>	
+	</developers>
 	<licenses>
 		<license>
 			<name>GNU General Public License, Version 2</name>
 			<url>https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</url>
 		</license>
 	</licenses>
-	
+
 	<scm>
-        <connection>scm:git@github.com:emiperez/idgenerators.git</connection>
-        <developerConnection>scm:git@github.com:emiperez/idgenerators.git</developerConnection>
-        <url>https://github.com/emiperez/idgenerators</url>
-        <tag>0.1.1</tag>
-    </scm>
-	
+		<connection>scm:git@github.com:emiperez/idgenerators.git</connection>
+		<developerConnection>scm:git@github.com:emiperez/idgenerators.git</developerConnection>
+		<url>https://github.com/emiperez/idgenerators</url>
+		<tag>0.1.1</tag>
+	</scm>
+
 	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<id>github</id>
-			<name>GitHub Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/emiperez/idgenerators</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -66,6 +69,58 @@
 					</configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
