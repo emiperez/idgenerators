@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.emiperez.commons</groupId>
 	<artifactId>idgenerators</artifactId>
-	<version>0.1.1</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>idgenerators</name>
 	<description>Id generators for java.</description>
 	<url>https://github.com/emiperez/idgenerators</url>
@@ -25,7 +25,6 @@
 		<connection>scm:git@github.com:emiperez/idgenerators.git</connection>
 		<developerConnection>scm:git@github.com:emiperez/idgenerators.git</developerConnection>
 		<url>https://github.com/emiperez/idgenerators</url>
-		<tag>0.1.1</tag>
 	</scm>
 
 	<distributionManagement>
@@ -72,7 +71,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
+				<version>1.6.8</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
